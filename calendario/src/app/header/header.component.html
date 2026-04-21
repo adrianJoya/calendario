@@ -1,0 +1,16 @@
+<ion-header class="app-header">
+  <ion-toolbar class="app-toolbar">
+    <ion-title>Mi aplicación</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button
+        fill="clear"
+        class="theme-toggle-btn"
+        [class.dark-active]="isDark()"
+        aria-label="Cambiar tema"
+        (click)="toggleTheme()">
+        <ion-icon class="theme-icon" [icon]="currentIcon()"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

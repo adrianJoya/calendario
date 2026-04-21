@@ -1,14 +1,3 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -18,20 +7,205 @@
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS utils */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* =========================================================
+   TOKENS GLOBALES DE LA APP
+   Todo componente nuevo debe consumir estas variables.
+   ========================================================= */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+:root {
+  /* Tipografía */
+  --app-font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Header */
+  --app-header-height: 56px;
+  --app-header-bg: #2f2f2f;
+  --app-header-text: #ffffff;
+  --app-header-border: rgba(255, 255, 255, 0.08);
+
+  /* Layout */
+  --app-page-bg: #eef3f8;
+  --app-surface: #ffffff;
+  --app-surface-2: #f8fafc;
+
+  /* Texto */
+  --app-text: #111827;
+  --app-text-muted: #6b7280;
+  --app-text-soft: #94a3b8;
+
+  /* Bordes y sombras */
+  --app-border: #dbe2ea;
+  --app-radius-sm: 12px;
+  --app-radius-md: 16px;
+  --app-radius-lg: 24px;
+  --app-shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06);
+  --app-shadow-md: 0 12px 30px rgba(15, 23, 42, 0.10);
+
+  /* Colores principales */
+  --app-primary: #4f86f7;
+  --app-primary-hover: #3f76e8;
+  --app-primary-contrast: #ffffff;
+
+  /* Inputs */
+  --app-input-bg: #f8fafc;
+  --app-input-border: #dbe2ea;
+  --app-input-text: #111827;
+  --app-input-placeholder: #94a3b8;
+
+  /* Espaciado */
+  --app-space-xs: 8px;
+  --app-space-sm: 12px;
+  --app-space-md: 16px;
+  --app-space-lg: 24px;
+  --app-space-xl: 32px;
+
+  /* Variables Ionic globales */
+  --ion-font-family: var(--app-font-family);
+  --ion-background-color: var(--app-page-bg);
+  --ion-text-color: var(--app-text);
+
+  --ion-color-primary: var(--app-primary);
+  --ion-color-primary-rgb: 79, 134, 247;
+  --ion-color-primary-contrast: var(--app-primary-contrast);
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #4677d9;
+  --ion-color-primary-tint: #6295f8;
+}
+
+body.dark {
+  --app-header-bg: #222222;
+  --app-header-text: #f9fafb;
+  --app-header-border: rgba(255, 255, 255, 0.08);
+
+  --app-page-bg: #0f172a;
+  --app-surface: #1e293b;
+  --app-surface-2: #273449;
+
+  --app-text: #f8fafc;
+  --app-text-muted: #cbd5e1;
+  --app-text-soft: #94a3b8;
+
+  --app-border: #334155;
+  --app-shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.22);
+  --app-shadow-md: 0 18px 40px rgba(0, 0, 0, 0.28);
+
+  --app-primary: #7aa2ff;
+  --app-primary-hover: #6c95f4;
+  --app-primary-contrast: #0f172a;
+
+  --app-input-bg: #243041;
+  --app-input-border: #3b4b61;
+  --app-input-text: #f8fafc;
+  --app-input-placeholder: #94a3b8;
+
+  --ion-background-color: var(--app-page-bg);
+  --ion-text-color: var(--app-text);
+
+  --ion-color-primary: var(--app-primary);
+  --ion-color-primary-rgb: 122, 162, 255;
+  --ion-color-primary-contrast: var(--app-primary-contrast);
+  --ion-color-primary-contrast-rgb: 15, 23, 42;
+  --ion-color-primary-shade: #6b8ee0;
+  --ion-color-primary-tint: #8aadff;
+}
+
+/* Base global */
+html,
+body,
+ion-app {
+  font-family: var(--app-font-family);
+  background: var(--app-page-bg);
+  color: var(--app-text);
+}
+
+/* Reglas reutilizables para toda la app */
+.app-page {
+  min-height: 100%;
+  background: var(--app-page-bg);
+  color: var(--app-text);
+}
+
+.app-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-md);
+}
+
+.app-section-title {
+  margin: 0;
+  color: var(--app-text);
+  font-weight: 700;
+}
+
+.app-section-subtitle {
+  margin: 0;
+  color: var(--app-text-muted);
+}
+
+.app-input {
+  --background: var(--app-input-bg);
+  --color: var(--app-input-text);
+  --placeholder-color: var(--app-input-placeholder);
+  --border-radius: var(--app-radius-sm);
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  --min-height: 56px;
+  border: 1px solid var(--app-input-border);
+  border-radius: var(--app-radius-sm);
+}
+
+.app-button-primary {
+  --background: var(--app-primary);
+  --background-hover: var(--app-primary-hover);
+  --color: var(--app-primary-contrast);
+  --border-radius: var(--app-radius-sm);
+  --box-shadow: var(--app-shadow-sm);
+  min-height: 48px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.app-toolbar {
+  --background: var(--app-header-bg);
+  --color: var(--app-header-text);
+  --border-color: transparent;
+}
+
+/* Ajuste visual general */
+ion-content {
+  --background: var(--app-page-bg);
+}
+
+/* =========================================================
+   TRANSICIONES GLOBALES DE TEMA
+   ========================================================= */
+:root {
+  --theme-transition: 260ms ease;
+}
+body,
+ion-app,
+ion-content,
+.app-page,
+.app-card,
+.app-toolbar,
+.app-input,
+.app-button-primary,
+.login-card,
+.login-title,
+.login-subtitle,
+ion-item,
+ion-button,
+ion-title {
+  transition:
+    background-color 260ms ease,
+    color 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+}

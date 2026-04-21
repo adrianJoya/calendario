@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+ion-header,
+ion-toolbar {
+  --background: var(--app-header-bg);
+  --color: var(--app-header-text);
+}
+
+ion-toolbar {
+  --min-height: var(--app-header-height);
+  --padding-start: 12px;
+  --padding-end: 8px;
+}
+
+ion-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.theme-toggle-btn {
+  --color: var(--app-header-text);
+  position: relative;
+}
+
+.theme-icon {
+  font-size: 22px;
+  transition:
+    transform 260ms ease,
+    opacity 220ms ease,
+    color 220ms ease;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+.theme-toggle-btn.dark-active .theme-icon {
+  transform: rotate(180deg) scale(1.08);
+}
+
+.theme-toggle-btn:active .theme-icon {
+  transform: scale(0.9);
+}

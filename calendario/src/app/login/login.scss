@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.login-page {
+  --background: transparent;
+}
+
+.login-wrapper {
+  min-height: calc(100vh - var(--app-header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--app-space-lg) var(--app-space-md);
+  background: var(--app-page-bg);
+  transition:
+    background-color var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition),
+    box-shadow var(--theme-transition);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--app-space-lg) var(--app-space-md);
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-md);
+  transition:
+    background-color var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition),
+    box-shadow var(--theme-transition);
+}
+
+.login-title,
+.login-subtitle {
+  transition: color var(--theme-transition);
+}
