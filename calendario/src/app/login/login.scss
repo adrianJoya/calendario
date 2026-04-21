@@ -39,3 +39,10 @@
 .login-subtitle {
   transition: color var(--theme-transition);
 }
+
+.login-message {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--app-text-muted);
+  font-size: 0.95rem;
+}

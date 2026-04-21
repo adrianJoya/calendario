@@ -1,16 +1,16 @@
-import { ThemeService } from "./services/theme.service";
+import { AuthService } from "./auth.service";
 import { TestBed } from "@angular/core/testing";
 
-describe("ThemeService", () => {
+describe("AuthService", () => {
 
-  let service: ThemeService;
+  let service: AuthService;
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        ThemeService
+        AuthService
       ]
     });
-    service = TestBed.get(ThemeService);
+    service = TestBed.get(AuthService);
 
   });
 

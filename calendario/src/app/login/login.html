@@ -13,7 +13,7 @@
             label="Email"
             label-placement="stacked"
             placeholder="correo@ejemplo.com"
-            clear-input="true">
+            [(ngModel)]="email">
           </ion-input>
         </ion-item>
 
@@ -22,13 +22,22 @@
             type="password"
             label="Contraseña"
             label-placement="stacked"
-            placeholder="Introduce tu contraseña">
+            placeholder="Introduce tu contraseña"
+            [(ngModel)]="password">
           </ion-input>
         </ion-item>
 
-        <ion-button expand="block" class="app-button-primary login-button">
+        <ion-button expand="block" class="app-button-primary login-button" (click)="onLogin()">
           Entrar
         </ion-button>
+
+        <ion-button expand="block" fill="clear" (click)="onRegister()">
+          Crear cuenta
+        </ion-button>
+
+        @if (message) {
+          <p class="login-message">{{ message }}</p>
+        }
       </div>
     </div>
   </div>

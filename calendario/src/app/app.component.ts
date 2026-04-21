@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
-import { ThemeService } from './theme.service';
+import { ThemeService } from './services/theme.service';
 import { HeaderComponent } from './header/header.component';
 
 @Component({

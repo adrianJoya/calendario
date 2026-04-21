@@ -14,7 +14,7 @@ import {
 } from '@ionic/angular/standalone';
 import { moonOutline, sunnyOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
-import { ThemeService } from '../theme.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-header',
